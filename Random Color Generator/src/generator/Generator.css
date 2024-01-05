@@ -1,0 +1,23 @@
+.square {
+    height: 200px;
+    width: 100%;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  .square:hover{
+    opacity: 0.8;
+    transition: 0.5s ease;
+    transform: scale(1.1);
+
+  }
+
+  /* Style for content within square divs */

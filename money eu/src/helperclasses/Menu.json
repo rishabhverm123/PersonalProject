@@ -1,0 +1,28 @@
+[
+  {
+      "id": 36,
+      "name": "Dashboard",
+      "icon": "th-large",
+      "path": "/logged/dashboard",
+      "idParent": 0,
+      "idResource": {
+        "id": 16,
+        "name": "Charts"
+      },
+      "sort": 1
+  },
+  {
+    "id": 1,
+    "name": "Orders",
+    "icon": "suitcase",
+    "path": "/logged/orders",
+    "idParent": 0,
+    "idResource": {
+      "id": 1,
+      "name": "Orders"
+    },
+    "sort": 2
+  }
+
+
+]

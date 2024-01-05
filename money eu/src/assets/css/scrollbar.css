@@ -1,0 +1,68 @@
+/* Scrollbar start css */
+
+::-webkit-scrollbar {
+    width: 8px !important;
+    scrollbar-width: thin!important;
+    scrollbar-color: #888!important;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 8px !important;
+    scrollbar-width: thin!important;
+    scrollbar-color: #888!important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888 !important;
+    border-radius: 10px !important;
+    visibility: hidden!important;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent !important;
+    border-radius: 10px !important;
+}
+
+.scrollable {
+    overflow: auto;
+}
+
+.scrollableX {
+    overflow: hidden!important;
+    overflow-x: auto!important;
+    overflow-y: hidden!important;
+}
+
+.scrollableY {
+    overflow: hidden!important;
+    overflow-x: hidden!important;
+    overflow-y: auto!important;
+}
+
+.scrollableY_scrolled {
+    overflow: hidden!important;
+    overflow-y: scroll!important;
+}
+
+.k-multiselect-wrap {
+    overflow-y: scroll !important;
+}
+
+.scrollable:hover::-webkit-scrollbar-thumb,
+.scrollableX:hover::-webkit-scrollbar-thumb,
+.scrollableY:hover::-webkit-scrollbar-thumb,
+.scrollableY_scrolled:hover::-webkit-scrollbar-thumb,
+.input_textarea:hover::-webkit-scrollbar-thumb,
+.k-multiselect-wrap:hover::-webkit-scrollbar-thumb,
+.div.k-virtual-content:hover::-webkit-scrollbar-thumb,
+.k-list-scroller:hover::-webkit-scrollbar-thumb,
+.k-grid-content:hover::-webkit-scrollbar-thumb,
+.k-menu-popup:hover::-webkit-scrollbar-thumb,
+.inner_right_section_k_window .k-window-content:hover::-webkit-scrollbar-thumb,
+.k-splitter .k-scrollable:hover::-webkit-scrollbar-thumb,
+.pvtCheckContainer:hover::-webkit-scrollbar-thumb {
+    visibility: visible !important;
+}
+
+
+

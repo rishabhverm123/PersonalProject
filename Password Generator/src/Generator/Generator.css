@@ -1,0 +1,60 @@
+.container{
+    top: 10% !important;
+    position: relative !important;
+    
+}
+
+
+.card{
+    background: rgba(255, 255, 255, 0.43) !important;
+border-radius: 16px !important;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+backdrop-filter: blur(2.1px) !important;
+-webkit-backdrop-filter: blur(2.1px) !important;
+border: 1px solid rgba(255, 255, 255, 0.28) !important;
+}
+
+.password-container{
+    height: 3rem;
+
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 15px;
+    justify-content: space-between;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.text-container{
+    color: #344054;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    width: calc(100% - 2rem);
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    /* text-overflow: ellipsis; */
+}
+.form_label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #344054;
+    line-height: 1.25rem;
+    margin-top: 0.625rem;
+    margin-bottom: 0.25rem;
+}
+.text_astric {
+    color: #F90505 !important;
+    font-size: 1rem;
+    vertical-align: middle;
+  }
+
+  .rule_container{
+    border: 1px #344054 solid;
+    border-radius: 12px;
+    padding: 10px;
+  }
