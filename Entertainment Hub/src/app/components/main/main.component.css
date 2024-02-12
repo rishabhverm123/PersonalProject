@@ -33,7 +33,7 @@
 }
 
 .main_Section{
-    max-height: calc(100% - 150px);
+    max-height: calc(100% - 160px);
     position: absolute;
     width: calc(100% - 10px);
     top: 90px;
