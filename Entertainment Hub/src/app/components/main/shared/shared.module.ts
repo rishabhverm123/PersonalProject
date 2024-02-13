@@ -6,15 +6,20 @@ import { PaginatorComponent } from './paginator/paginator.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { BadgeModule } from 'primeng/badge';
 import { GenresComponent } from './genres/genres.component';
-import { NgbTooltip, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule, NgbModule, NgbTooltip, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalContentCardComponent } from './modal-content-card/modal-content-card.component';
 @NgModule({
-  declarations: [ContentCardComponent, PaginatorComponent, GenresComponent],
+  declarations: [ContentCardComponent, PaginatorComponent, GenresComponent, ModalContentCardComponent],
   imports: [
     CommonModule,
     PaginatorModule,
     BadgeModule,
-    NgbTooltipModule
+    NgbModule,
+    NgbTooltipModule,
+    NgbModalModule 
   ],
-  exports:[ContentCardComponent,PaginatorComponent,GenresComponent]
+  
+  exports:[ContentCardComponent,PaginatorComponent,GenresComponent],
+
 })
 export class SharedModule { }

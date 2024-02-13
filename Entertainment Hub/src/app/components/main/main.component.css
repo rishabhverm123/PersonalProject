@@ -4,7 +4,7 @@
     background: #39445a;;
     position: fixed;
     top: 0;
-    z-index: 9999;
+    /* z-index: 9999; */
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     
 }
@@ -39,7 +39,7 @@
     width: calc(100% - 10px);
     top: 90px;
     /* margin-bottom: 55px; */
-    z-index: 9999;
+    /* z-index: 9999; */
     margin: 10px;
     overflow-y: auto;
     overflow-x: hidden;

@@ -1,7 +1,7 @@
 
     <div *ngIf="movie!=null" class="card mb-4 rounded-3 shadow-sm">
       <div class="card-badge" *ngIf="movie.vote_average>0"><p-badge value="{{movie.vote_average}}" severity="warning"></p-badge></div>
-      <div class="card-body">
+      <div class="card-body" (click)="open_modal(movie)">
             
         <img class="poster w-100" *ngIf="movie.poster_path" src="{{img_300}}{{movie.poster_path}}" alt="{{movie?.title || movie?.name}}"/>
         <img class="poster w-100" *ngIf="!movie.poster_path" src="{{no_img}}" alt="{{movie?.title || movie?.name}}"/>

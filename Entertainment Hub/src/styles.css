@@ -35,3 +35,36 @@ html,body{
     margin: 10px;
     width: 100%;
 }
+/****************css for Modal popup*****************/
+.modal.fade .modal-dialog {
+    transition: none !important;
+  }
+  
+  .modal-dialog {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0px !important;
+    z-index: 99999999;
+  }
+  
+  .modal-content {
+    border-radius: 1rem !important;
+  }
+  
+
+
+  
+ 
+  
+  .modal-body {
+    padding-top: 0rem;
+  }
+  
+ 
+  
+  .modal-75 .modal-dialog {
+    max-width: 65rem !important;
+  }
+  

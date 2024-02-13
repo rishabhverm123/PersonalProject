@@ -1,0 +1,34 @@
+<div class="ContentModal" style="background-color: #39445a;">
+    <div class="modal-body "  id="div_modal_body">
+        <div class="card-body ">
+
+            <div class="row">
+                <div class="col-4">
+                    <img class="ContentModal__portrait w-100" *ngIf="movie.poster_path" src="{{img_300}}{{movie.poster_path}}" alt="{{movie?.title || movie?.name}}"/>
+            <img class="ContentModal__portrait w-100" *ngIf="!movie.poster_path" src="{{no_img}}" alt="{{movie?.title || movie?.name}}"/>
+                </div>
+                <div class="col-8">
+                    <div class="ContentModal__about w-100">
+                        <span class="ContentModal__title">
+                            {{movie.name || movie.title}}({{getYear(movie.first_air_date||movie.release_date ||"-----")}})
+                        </span>
+                        <span class="tagline">{{movie.tagline}}</span>
+                        <span class="ContentModal__description">
+                            {{movie.overview}}
+                          </span>
+                          <div class="w-100">
+                            <button (click)="watch()" class="btn btn_watch w-100" ngbTooltip="click to watch trailer on youtube"> <i class="bi bi-youtube"></i> WATCH THE TRAILER</button>
+                        </div>
+                    </div>
+       
+                </div>
+            </div>
+              
+
+
+      </div>
+    </div>
+
+</div>
+
+

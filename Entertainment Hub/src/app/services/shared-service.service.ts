@@ -11,6 +11,7 @@ export class SharedService{
     this.transfterSubject=new Subject<any>();
   }
 
+  modal_instance:any = null;
   
 
   public transfterSubject:any;

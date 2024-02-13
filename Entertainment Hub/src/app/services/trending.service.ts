@@ -30,4 +30,9 @@ export class TrendingService {
   fetchSearch(page:any,type:any,searchText:any): Observable<any> {
     return this.http.get<any>(`${API_URL}/search/${type}?api_key=${SECRET_API_KEY}&language=en-US&query=${searchText}&page=${page}&include_adult=false`);
   }
+
+  fetchVideo(id:any,media_type:any){
+    return this.http.get<any>(`${API_URL}/${media_type}/${id}/videos?api_key=${SECRET_API_KEY}&language=en-US`);
+
+  }
 }
