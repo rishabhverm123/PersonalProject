@@ -1,6 +1,8 @@
 
     <div *ngIf="movie!=null" class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-badge" *ngIf="movie.vote_average>0"><p-badge value="{{movie.vote_average}}" severity="warning"></p-badge></div>
       <div class="card-body">
+            
             <img class="poster w-100" src="{{img_300}}{{movie.poster_path}}" alt="rishabh"/>
 
             <span class="title">{{movie?.title || movie?.name}}</span>

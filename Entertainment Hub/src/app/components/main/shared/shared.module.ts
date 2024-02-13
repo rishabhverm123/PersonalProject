@@ -4,12 +4,13 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import { PaginatorComponent } from './paginator/paginator.component';
 
 import { PaginatorModule } from 'primeng/paginator';
-
+import { BadgeModule } from 'primeng/badge';
 @NgModule({
   declarations: [ContentCardComponent, PaginatorComponent],
   imports: [
     CommonModule,
-    PaginatorModule
+    PaginatorModule,
+    BadgeModule
   ],
   exports:[ContentCardComponent,PaginatorComponent]
 })
