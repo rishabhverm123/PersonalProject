@@ -27,3 +27,11 @@ html,body{
 .content-body{
     margin-top: 20px;
 }
+
+.content-footer{
+    padding:10px 10px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    width: 100%;
+}

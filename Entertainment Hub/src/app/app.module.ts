@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SharedService } from './services/shared-service.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TrendingService } from './services/trending.service';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +18,7 @@ import { TrendingService } from './services/trending.service';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [SharedService,TrendingService],
   bootstrap: [AppComponent]

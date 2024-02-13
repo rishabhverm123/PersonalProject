@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/services/shared-service.service';
 import { TrendingService } from 'src/app/services/trending.service';
 
 @Component({
@@ -8,14 +9,16 @@ import { TrendingService } from 'src/app/services/trending.service';
   styleUrls: ['./trending.component.css']
 })
 export class TrendingComponent implements OnInit {
-  constructor(private service_trending:TrendingService){}
+  constructor(private service_trending:TrendingService,private service_shared:SharedService){}
 
   ngOnInit(): void {
+    this.data_receiver();
       this.getTrendings();
   }
 
   ngOnDestroy() {
     this.disposeAllSubscriptions();
+    
   }
 
   subscriptions: Subscription[] = [];
@@ -24,16 +27,38 @@ export class TrendingComponent implements OnInit {
     this.subscriptions.forEach((subscription) => subscription.unsubscribe());
   }
 
-  public page=1;
+  data_receiver(){
+    let subscribe=this.service_shared.data_receiver().subscribe(
+      (result:any)=>{
+        if(result.type=='change_page'){
+          window.scroll(0, 0);
+          this.page=result.data.page;
+          this.getTrendings();
+        }
+      }
+    )
+    this.subscriptions.push(subscribe);
+  }
+
+  public page=0;
 
   public trendingData=[];
 
+  public TotalData=0;
+
+  public TotalPages=0;
+
 
   getTrendings(){
-      let subscribe=this.service_trending.getTrending(this.page).subscribe(
+      let subscribe=this.service_trending.getTrending(this.page+1).subscribe(
         (res:any)=>{
           subscribe.unsubscribe();
           this.trendingData=res.results;
+          this.TotalData=res.total_results;
+
+          this.TotalPages=res.total_pages;
+
+
         },
         (error:any)=>{
           subscribe.unsubscribe();

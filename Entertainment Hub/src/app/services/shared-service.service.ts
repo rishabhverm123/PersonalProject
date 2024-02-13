@@ -29,4 +29,8 @@ export class SharedService{
     return this.transfterSubject.asObservable();
   }
 
+  change_page(page:any){
+    this.data_sender('change_page',{page:page})
+  }
+
 }
