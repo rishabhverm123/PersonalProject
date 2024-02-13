@@ -35,4 +35,8 @@ export class TrendingService {
     return this.http.get<any>(`${API_URL}/${media_type}/${id}/videos?api_key=${SECRET_API_KEY}&language=en-US`);
 
   }
+  fetchData(id:any,media_type:any){
+    return this.http.get<any>(`${API_URL}/${media_type}/${id}?api_key=${SECRET_API_KEY}&language=en-US`);
+
+  }
 }
