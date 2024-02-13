@@ -13,6 +13,11 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.getSearching();
     this.data_receiver();
+    let el=document.getElementById("mysearch")as HTMLInputElement;
+    if(el!=null){
+      el.focus();
+    }
+
   }
 
   ngOnDestroy() {
