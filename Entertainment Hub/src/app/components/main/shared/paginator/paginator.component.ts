@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Paginator } from 'primeng/paginator';
+import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/services/shared-service.service';
 
 interface PageEvent {
@@ -13,7 +15,7 @@ interface PageEvent {
   templateUrl: './paginator.component.html',
   styleUrls: ['./paginator.component.css']
 })
-export class PaginatorComponent {
+export class PaginatorComponent implements OnInit {
 
   constructor(public service_shared:SharedService){}
   first: number = 0;
@@ -23,6 +25,7 @@ export class PaginatorComponent {
   totalRecord=0;
 
   TotalPages=10;
+  @ViewChild('p', {static: false}) paginator: any;
 
   @Input('child_data') set child_data({totalRecord,callSource}:any) {
     //debugger;
@@ -33,6 +36,33 @@ export class PaginatorComponent {
         this.totalRecord=totalRecord;
       }
    
+  }
+  ngOnInit(): void {
+    this.data_receiver();
+  }
+
+  ngOnDestroy() {
+    this.disposeAllSubscriptions();
+    
+  }
+
+  subscriptions: Subscription[] = [];
+
+  disposeAllSubscriptions() {
+    this.subscriptions.forEach((subscription) => subscription.unsubscribe());
+  }
+  data_receiver(){
+    let subscribe=this.service_shared.data_receiver().subscribe(
+      (result:any)=>{
+        if(result.type=='reset_page'){
+          this.first=0;    
+          this.rows=20;
+          this.paginator.changePageToFirst();
+   
+        }
+      }
+    )
+    this.subscriptions.push(subscribe);
   }
 
   onPageChange(event: any) {

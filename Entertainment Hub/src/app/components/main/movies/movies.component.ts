@@ -39,7 +39,17 @@ export class MoviesComponent implements OnInit{
         }
         if(result.type=='set_genres'){
             this.selectedGenres=result.data.genres.join(',');
-            this.getMovies();
+            
+            if(this.page!=0){
+              this.page=0;
+              this.service_shared.reset_page();
+            }
+            else{
+              this.getMovies();
+            }
+            
+            // this.page=0;
+            // 
         }
         
       }

@@ -1,7 +1,28 @@
-<div class="container-fluid p-2">
-    <div class="content-header">SEARCH ANY MOVIE/SERIES</div>
+<div class="container-fluid mt-2 p-2">
+    <div id="container_top" class="content-header">
+        <div class="search-container">     
+                <input type="text" class="form-control search_input" [(ngModel)]="searchedText" placeholder="search" />   
+                <button class="btn btn_search" (click)="getSearching()"><i class="bi bi-search" style="font-weight: bold;font-size: x-large;"></i></button>
+        </div>
+    </div>
 
     <div class="content-body">
+        <div class="row mb-3">
+            <div class="tab_container">
+                <a  href="javascript:void(0);" (click)="select_tab('movie')" [ngClass]="{'active':selectedTab=='movie'}">SEARCH MOVIES</a>
+                <a href="javascript:void(0);" (click)="select_tab('tv')" [ngClass]="{'active':selectedTab=='tv'}">SEARCH TV SERIES</a>
+            </div>
+        </div>
 
+        <div class="row row-cols-1 mt-4 row-cols-md-5 mb-3 text-center">
+            <div class="col" *ngFor="let item of searchData">
+                <app-content-card [child_data]="{movie:item}"></app-content-card>
+            </div>
+        
+        </div>
+
+    </div>
+    <div *ngIf="searchData.length>0" class="content-footer">
+        <app-paginator [child_data]="{totalRecord:TotalData,TotalPages:TotalPages, callSource:'search'}"></app-paginator>
     </div>
 </div>

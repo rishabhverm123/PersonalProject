@@ -26,4 +26,8 @@ export class TrendingService {
   getGenres(type:any): Observable<any> {
     return this.http.get<any>(`${API_URL}/genre/${type}/list?api_key=${SECRET_API_KEY}&language=en-US`);
   }
+
+  fetchSearch(page:any,type:any,searchText:any): Observable<any> {
+    return this.http.get<any>(`${API_URL}/search/${type}?api_key=${SECRET_API_KEY}&language=en-US&query=${searchText}&page=${page}&include_adult=false`);
+  }
 }

@@ -46,6 +46,10 @@ export class SharedService{
     }, 100);
 }
 
+reset_page(){
+  this.data_sender('reset_page',null)
+}
+
 
 
 }
