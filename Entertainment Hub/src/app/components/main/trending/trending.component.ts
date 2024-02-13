@@ -43,7 +43,7 @@ export class TrendingComponent implements OnInit {
 
   public page=0;
 
-  public trendingData=[];
+  public trendingData:any=[];
 
   public TotalData=0;
 

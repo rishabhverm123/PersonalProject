@@ -20,9 +20,12 @@ export class ContentCardComponent implements OnInit {
 
   public movie:any=null;
 
-  @Input('child_data') set child_data({movie}:any) {
+  public media_type:any=null;
+
+  @Input('child_data') set child_data({movie,media_type}:any) {
     //debugger;
       this.movie=movie;
+      this.media_type=media_type;
   }
 
   open_modal(movie:any){
@@ -30,7 +33,7 @@ export class ContentCardComponent implements OnInit {
       ModalContentCardComponent, { windowClass: "modal-75",
     });
 
-    this.service_shared.modal_instance.componentInstance.movie=movie;
+    this.service_shared.modal_instance.componentInstance.modal_data={movie:movie,media_type:this.media_type};
   }
 
   ngOnInit(): void {

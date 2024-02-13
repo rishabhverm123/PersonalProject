@@ -16,7 +16,7 @@
 
         <div class="row row-cols-1 mt-4 row-cols-md-5 mb-3 text-center">
             <div class="col" *ngFor="let item of searchData">
-                <app-content-card [child_data]="{movie:item}"></app-content-card>
+                <app-content-card [child_data]="{movie:item,media_type:selectedTab}"></app-content-card>
             </div>
         
         </div>

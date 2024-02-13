@@ -14,6 +14,9 @@ export class ModalContentCardComponent implements OnInit {
 
 
   movie:any=null;
+  media_type:any=null;
+
+  modal_data:any=null;
 
   movieFull:any=null;
 
@@ -24,6 +27,8 @@ export class ModalContentCardComponent implements OnInit {
   public video_url=null;
 
   ngOnInit(): void {
+    this.movie=this.modal_data.movie;
+    this.media_type=this.modal_data.media_type;
     this.getData();
 
   }
@@ -44,7 +49,7 @@ export class ModalContentCardComponent implements OnInit {
   }
 
   getVideo(){
-    let subscribe=this.service_trending.fetchVideo(this.movie.id,this.movie.media_type).subscribe(
+    let subscribe=this.service_trending.fetchVideo(this.movie.id,this.media_type).subscribe(
       (res:any)=>{
         subscribe.unsubscribe();
 
@@ -60,7 +65,8 @@ export class ModalContentCardComponent implements OnInit {
 }
 
 getData(){
-  let subscribe=this.service_trending.fetchData(this.movie.id,this.movie.media_type).subscribe(
+  debugger;
+  let subscribe=this.service_trending.fetchData(this.movie.id,this.media_type).subscribe(
     (res:any)=>{
       subscribe.unsubscribe();
       debugger;
