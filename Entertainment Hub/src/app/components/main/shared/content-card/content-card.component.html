@@ -3,7 +3,8 @@
       <div class="card-badge" *ngIf="movie.vote_average>0"><p-badge value="{{movie.vote_average}}" severity="warning"></p-badge></div>
       <div class="card-body">
             
-            <img class="poster w-100" src="{{img_300}}{{movie.poster_path}}" alt="rishabh"/>
+        <img class="poster w-100" *ngIf="movie.poster_path" src="{{img_300}}{{movie.poster_path}}" alt="{{movie?.title || movie?.name}}"/>
+        <img class="poster w-100" *ngIf="!movie.poster_path" src="{{no_img}}" alt="{{movie?.title || movie?.name}}"/>
 
             <span class="title">{{movie?.title || movie?.name}}</span>
 

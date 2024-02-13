@@ -32,6 +32,10 @@ export class SharedService{
   change_page(page:any){
     this.data_sender('change_page',{page:page})
   }
+
+  set_genres(genres:any){
+    this.data_sender('set_genres',{genres:genres})
+  }
   scroll_to_element(element:any) {
     //debugger;
     setTimeout(() => {

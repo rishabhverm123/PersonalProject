@@ -16,4 +16,14 @@ export class TrendingService {
   getTrending(page:any): Observable<any> {
     return this.http.get<any>(`${API_URL}/trending/all/day?api_key=${SECRET_API_KEY}&page=${page}`);
   }
+
+  getMovies(page:any,genreforURL:any): Observable<any> {
+    return this.http.get<any>(`${API_URL}/discover/movie?api_key=${SECRET_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}`);
+  }
+  getSeries(page:any,genreforURL:any): Observable<any> {
+    return this.http.get<any>(`${API_URL}/discover/tv?api_key=${SECRET_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}`);
+  }
+  getGenres(type:any): Observable<any> {
+    return this.http.get<any>(`${API_URL}/genre/${type}/list?api_key=${SECRET_API_KEY}&language=en-US`);
+  }
 }

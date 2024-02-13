@@ -1,0 +1,7 @@
+<ng-container *ngIf="GenresData.length>0">
+    <div class="chip-container" [ngClass]="{'active':selectedGenres.includes(item.id)}" *ngFor="let item of GenresData" (click)="selectGenres(item)">
+        <div class="chip-content">{{item.name}}</div>
+        <span *ngIf="selectedGenres.includes(item.id)" class="chip-close" ngbTooltip="close" (click)="removeGenres(item)"><i class="bi bi-x-circle-fill"></i></span>
+    </div>
+</ng-container>
+

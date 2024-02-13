@@ -1,7 +1,24 @@
-<div class="container-fluid p-2">
-    <div class="content-header">DISCOVER SERIES</div>
 
+
+<div id="container_top" class="container p-2">
+    <div class="content-header">
+       <span> DISCOVER SERIES</span>
+        <div class="genres-container mt-3">
+            <app-genres [child_data]="{call_source:'tv'}"></app-genres>
+        </div>
+    </div>
+    
     <div class="content-body">
+        <div class="row row-cols-1 row-cols-md-5 mb-3 text-center">
+            <div class="col" *ngFor="let item of TVData">
+                <app-content-card [child_data]="{movie:item}"></app-content-card>
+            </div>
+        
+        </div>
 
     </div>
+    <div class="content-footer">
+        <app-paginator [child_data]="{totalRecord:TotalData,TotalPages:TotalPages, callSource:'TV'}"></app-paginator>
+    </div>
 </div>
+
