@@ -31,9 +31,10 @@ export class TrendingComponent implements OnInit {
     let subscribe=this.service_shared.data_receiver().subscribe(
       (result:any)=>{
         if(result.type=='change_page'){
-          window.scroll(0, 0);
+          this.service_shared.scroll_to_element('container_top')
           this.page=result.data.page;
           this.getTrendings();
+       
         }
       }
     )

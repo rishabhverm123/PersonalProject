@@ -32,5 +32,16 @@ export class SharedService{
   change_page(page:any){
     this.data_sender('change_page',{page:page})
   }
+  scroll_to_element(element:any) {
+    //debugger;
+    setTimeout(() => {
+        const scrollTo = document.querySelector("#" + element);
+        if (scrollTo) {
+            scrollTo.scrollIntoView({ block: 'start', inline: 'start',behavior: 'smooth'  });
+        }
+    }, 100);
+}
+
+
 
 }

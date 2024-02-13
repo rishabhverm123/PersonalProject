@@ -24,9 +24,15 @@ export class PaginatorComponent {
 
   TotalPages=10;
 
-  @Input('child_data') set child_data({totalRecord,TotalPages}:any) {
+  @Input('child_data') set child_data({totalRecord,callSource}:any) {
     //debugger;
-      this.totalRecord=totalRecord/10;
+      if(callSource=='Trending'){
+        this.totalRecord=totalRecord/10;
+      }
+      else{
+        this.totalRecord=totalRecord;
+      }
+   
   }
 
   onPageChange(event: any) {

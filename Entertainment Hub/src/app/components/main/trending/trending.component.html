@@ -1,4 +1,4 @@
-<div class="container p-2">
+<div id="container_top" class="container p-2">
     <div class="content-header">TRENDING TODAY</div>
 
     <div class="content-body">
@@ -11,6 +11,6 @@
 
     </div>
     <div class="content-footer">
-        <app-paginator [child_data]="{totalRecord:TotalData,TotalPages:TotalPages}"></app-paginator>
+        <app-paginator [child_data]="{totalRecord:TotalData,TotalPages:TotalPages, callSource:'Trending'}"></app-paginator>
     </div>
 </div>
