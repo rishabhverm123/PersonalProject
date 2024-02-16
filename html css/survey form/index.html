@@ -8,19 +8,99 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./index.css">
+        <script src="./index.js"></script>
     </head>
-    <body>
+    <body onload="loadJS()">
         <div class="container">
             <div class="form-container">
                 <h1 class="main-heading">Survey Form:</h1>
                 <hr>
 
                 <form class="form-class">
-                    <span class="heading">
-                        Customer Name
-                    </span>
-                    <div class="field-inputs">
+                    <div class="form-control">
+                        <span class="heading">
+                            Customer Name
+                        </span>
+                        <div class="field-inputs">
+                            <div class="input_label w50">
+                                <input class="form_input" type="text">
+                                <label class="form_label">Enter Your First Name <span class="text_astric">*</span></label>
+                            </div>
+                            <div class="input_label w50">
+                                <input class="form_input" type="text">
+                                <label class="form_label">Enter Your Last Name <span class="text_astric">*</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-control" style="margin-top: 30px;">
+                        <span class="heading">
+                            Address
+                        </span>
 
+                        <div class="field-inputs">
+                            <div class="input_label w100">
+                                <input class="form_input" type="text">
+                                <label class="form_label">Street Address <span class="text_astric">*</span></label>
+                            </div>
+                        </div>
+                        <div class="field-inputs">
+                            <div class="input_label w100">
+                                <input class="form_input" type="text">
+                                <label class="form_label">Street Address line2 <span class="text_astric">*</span></label>
+                            </div>
+                        </div>
+                        <div class="field-inputs">
+                            <div class="input_label w50">
+                                <input class="form_input" type="text">
+                                <label class="form_label">City <span class="text_astric">*</span></label>
+                            </div>
+                            <div class="input_label w50">
+                                <input class="form_input" type="text">
+                                <label class="form_label">State <span class="text_astric">*</span></label>
+                            </div>
+                        </div>
+                        <div class="field-inputs">
+                            <div class="input_label w50">
+                                <input class="form_input" type="number">
+                                <label class="form_label">Zip <span class="text_astric">*</span></label>
+                            </div>
+                            <div class="input_label w50">
+                                <select id="country" name="country" class="form-control">
+                                 
+                                </select>
+                                <label class="form_label">Select Country <span class="text_astric">*</span></label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-control">
+                        <span class="heading">
+                            Contact
+                        </span>
+                        <div class="field-inputs">
+                            <div class="input_label w50">
+                                <input class="form_input" type="text">
+                                <label class="form_label">Phone <span class="text_astric">*</span></label>
+                            </div>
+                            <div class="input_label w50">
+                                <input class="form_input" type="email">
+                                <label class="form_label">Email <span class="text_astric">*</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <span class="heading">
+                            Personal Details
+                        </span>
+                        <div class="input_label w50">
+                            <input  type="radio" id="male" name="gender" value="male"> Male <br><br>
+                            <input type="radio" id="female" name="gender" value="female"> Female <br><br>
+                            <input type="radio" id="other" name="gender" value="other"> Other <br><br>
+                        </div>
+                    </div>
+
+                    <div class="footer">
+                        <button class="btn">Submit</button>
                     </div>
                 </form>
             </div>
